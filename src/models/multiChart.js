@@ -491,7 +491,7 @@ nv.models.multiChart = function() {
                         pointIndex = nv.interactiveBisect(currentValues, e.pointXValue, chart.x());
                         var point = currentValues[pointIndex];
                         var pointYValue = chart.y()(point, pointIndex);
-                        if (pointYValue !== null && !isNaN(pointYValue) && !series.noHighlightSeries) {
+                        if (pointYValue !== null && pointYValue !== 0 && !isNaN(pointYValue) && !series.noHighlightSeries) {
                           highlightPoint(series, pointIndex, true);
                         }
                         if (point === undefined) return;
